@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Appointment</title>
+  <style>
+
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a routerLink="/appointments"><img class="logo" src="assets/logo.svg" alt="My Appointment Web App"></a>
+    <h1>Create Appointment</h1>
+  </header>
+  <main>
+    <div class="appointment-section">
+        <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()" class="form" action="/appointments" method="post" id="appointment-form" >
+            <label for="first-name" >First Name</label>
+            <input formControlName="firstName" type="text" id = "first-name" required>
+    
+            <label for="last-name">Last Name</label>
+            <input fornControlName="lastName" type="text" id = "last-name" required>
+    
+            <label for="email">Email Address</label>
+            <input formControlName="email" type="email" id="email" required>
+    
+            <label for="date">Date:</label>
+            <input formControlName="date" type="date" id="date" name="date" required>
+    
+            <label for="start-time">Start Time:</label>
+            <input formControlName="startTime" type="time" id="start-time" name="start-time" required>
+
+          <label for="employees">Select an Assistant</label>
+            <select formControlName="employeeName" name="employees" id="employees">
+              <option *ngFor="let employee of employees " value={{employee.firstName}}>{{employee.firstName}} {{employee.lastName}}</option>
+        
+            </select>
+    
+            <label for="description">Description:</label>
+            <textarea formControlName="description" id="description" name="description" required></textarea>
+    
+            <button type="submit">Create Appointment</button>
+
+        </form>
+
+    </div>    
+
+  </main>
+</body>
+</html>

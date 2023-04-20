@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - My Appointment Web App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .header {
+      background-color: #007ACC;
+      color: white;
+      padding: 20px;
+    }
+    .login-section {
+        margin: 50px 0; 
+    }
+    .logo {
+        display: block;
+        margin: auto;
+        max-width: 80px;
+        height: auto;
+      }
+    .form {
+      margin: 40px auto;
+      max-width: 400px;
+    }
+    .form input[type="email"], .form input[type="password"] {
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      padding: 10px;
+      width: 100%;
+    }
+    .form button {
+      background-color: #007ACC;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+      font-size: 1.2rem;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    .form button:hover {
+      background-color: #005F8B;
+    }
+    .links {
+      margin-top: 20px;
+    }
+    .links a {
+      color: #007ACC;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <img class="logo" src="assets/logo.svg" alt="My Appointment Web App">
+  </header>
+  <main>
+    <div class="login-section">
+        <h1>Login</h1>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form" action="appointments.html" method="post">
+          <input formControlName="email" type="email" name="email" placeholder="email" required>
+          <input formControlName="password" type="password" name="password" placeholder="Password" required>
+          <button type="submit">Login</button>
+        </form>
+        <div class="links">
+            <p>Don't have an account yet? <a href="signup">Sign in</a></p>
+        </div>
+    </div>
+
+  </main>
+</body>
+</html>
